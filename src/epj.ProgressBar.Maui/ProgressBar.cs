@@ -1,9 +1,7 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using SkiaSharp.Views.Maui.Controls;
-using System.Drawing;
-using System.IO;
-using Color = Microsoft.Maui.Graphics.Color;
+
 
 
 namespace epj.ProgressBar.Maui;
