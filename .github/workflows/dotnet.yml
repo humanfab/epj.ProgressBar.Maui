@@ -16,11 +16,11 @@ jobs:
     - name: Set VERSION variable from tag
       run: echo "VERSION=1.0.1" >> $GITHUB_ENV
     - name: Build
-      run: dotnet build ./src/epj.ProgressBar.Maui.csproj --configuration Release /p:Version=${VERSION}
+      run: dotnet build ./src/epj.ProgressBar.Maui/epj.ProgressBar.Maui.csproj --configuration Release /p:Version=${VERSION}
     - name: Test
-      run: dotnet test ./src/epj.ProgressBar.Maui.csproj --configuration Release /p:Version=${VERSION} --no-build
+      run: dotnet test ./src/epj.ProgressBar.Maui/epj.ProgressBar.Maui.csproj --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack
-      run: dotnet pack ./src/epj.ProgressBar.Maui.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet pack ./src/epj.ProgressBar.Maui/epj.ProgressBar.Maui.csproj --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Push
       run: dotnet nuget push epj.ProgressBar.Maui.${VERSION}.nupkg -s https://nuget.pkg.github.com/humanfab -k ${tok}
       env:
