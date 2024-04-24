@@ -19,6 +19,8 @@ jobs:
       run: dotnet workload restore ./src/epj.ProgressBar.Maui/epj.ProgressBar.Maui.csproj
     - name: Workload install android
       run: dotnet workload install android
+    - name: Workload install ios
+      run: dotnet workload install ios
     - name: Build
       run: dotnet build ./src/epj.ProgressBar.Maui/epj.ProgressBar.Maui.csproj --configuration Release /p:Version=${VERSION}
     - name: Test
